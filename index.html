@@ -61,11 +61,40 @@
         opacity: 0;
         transition: opacity 0.5s;
         padding: 1rem;
-        background: yellow;
         border-radius: 10px;
         margin: 1rem;
         position: absolute;
         z-index: 5;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        gap: 5px;
+      }
+      #box1{
+        background: #def54f;
+        color: #111;
+        font-size: 18px;
+        padding: 30px 30px;
+      }
+      .num-box{
+        font-size: 58px;
+        font-weight: 600;
+      }
+      #box2{
+        background: #6ac9ff;
+        color: #111;
+        padding: 30px 30px;
+      }
+      #box3{
+        background: #333;
+        color: #fff;
+        padding: 30px 30px;
+      }
+      #box4{
+        background: #fa7328;
+        color: #111;
+        padding: 30px 30px;
       }
       .text-box.show {
         opacity: 1;
@@ -75,7 +104,7 @@
         font-size: 8rem;
         font-weight: bold;
         position: absolute;
-        left: 15%;
+        left: 5%;
         z-index: 5;
         display: flex;
         gap: 0.3rem;
@@ -98,21 +127,31 @@
           />
           <div class="trail" id="trail"></div>
           <div class="value-add" id="valueText" style="top: 30%">
-            <span class="value-letter">V</span>
-            <span class="value-letter">A</span>
-            <span class="value-letter">L</span>
-            <span class="value-letter">U</span>
+            <span class="value-letter">W</span>
             <span class="value-letter">E</span>
-            <span class="value-letter">A</span>
-            <span class="value-letter">D</span>
-            <span class="value-letter">D</span>
+            <span class="value-letter">L</span>
+            <span class="value-letter">C</span>
+            <span class="value-letter">O</span>
+            <span class="value-letter">M</span>
+            <span class="value-letter">E</span>
+            <span class="value-letter">&nbsp;</span>
+            <span class="value-letter">H</span>
+            <span class="value-letter">E</span>
+            <span class="value-letter">R</span>
+            <span class="value-letter">E</span>
           </div>
-          <div class="text-box" id="box1" style="top: -20%; right: 10%">
-            58% Increase in pick up point use
-          </div>
-          <div class="text-box" id="box2" style="bottom: -10%; left: 10%">
-            23% Decreased in customer phone calls
-          </div>
+        </div>
+        <div class="text-box" id="box1" style="top: 5%; right: 30%">
+          <span class="num-box">58%</span> Increase in pick up point use
+        </div>
+        <div class="text-box" id="box2" style="bottom: 5%; right: 35%">
+            <span class="num-box">23%</span> Decreased in customer phone calls
+        </div>
+        <div class="text-box" id="box3" style="top: 5%; right: 10%">
+          <span class="num-box">27%</span> Increase in pick up point use
+        </div>
+        <div class="text-box" id="box4" style="bottom: 5%; right: 12.5%">
+            <span class="num-box">40%</span> Decreased in customer phone calls
         </div>
       </div>
     </div>
@@ -172,6 +211,24 @@
           trigger: ".section",
           start: "top+=600 top",
           end: "top+=800 top",
+          scrub: true,
+        },
+        opacity: 1,
+      });
+      gsap.to("#box3", {
+        scrollTrigger: {
+          trigger: ".section",
+          start: "top+=800 top",
+          end: "top+=1000 top",
+          scrub: true,
+        },
+        opacity: 1,
+      });
+      gsap.to("#box4", {
+        scrollTrigger: {
+          trigger: ".section",
+          start: "top+=1000 top",
+          end: "top+=1200 top",
           scrub: true,
         },
         opacity: 1,
